@@ -5,7 +5,7 @@ module Acme
 
     resource :users do
       get do
-        User.all.pluck(:name)
+        {:users => User.all.pluck(:name)}
       end
       post do
         user = User.create!(name: params[:name])

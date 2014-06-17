@@ -14,7 +14,9 @@ describe Acme::Users do
 
     results = []
     3.times { |x| results << "bernard" }
-    expect(body).to eq results
+
+    response = {"users" => results}.to_json
+    expect(body).to eq response
   end
 
   it "POST" do
